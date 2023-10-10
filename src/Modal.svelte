@@ -1,12 +1,12 @@
-<script>
-    export let message;
-	let isOpen = true;
+<script lang="ts">
+	export let isOpen = false;
 </script>
 
 {#if isOpen}
-	<div class="backdrop">
+	<div class="backdrop" on:click|self>
 		<div class="modal">
-			<p>{message}</p>
+            <slot name="title"></slot>
+			<slot></slot>
 		</div>
 	</div>
 {/if}
